@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="contents">
+<h1>Login</h1>
+<p>Only authorized personnel may enter beyond this point.</p>
+<p>If you are not authorized, please go <a href="{% url 'home' %}">back</a>.</p>
+
+{% if error %}
+<br>
+<p>에러메세지: </p>{{error}}
+{% endif %}
+
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <p>Username</p>
+    <input name="username" type="text">
+    <br>
+    <p>Password</p>
+    <input name="password" type="password">
+    <br>
+    <input type="submit", value="Login">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>This is where we upload our musics</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>조회수</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts.all %}
+        <tr>
+            <td>1</td>
+            <th><a href="{% url 'detail' post.id %}">{{post.title}}</a></th>
+            <th>{{post.author}}</th>
+            <th>{{post.pub_date}}</th>
+            <th>5</th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

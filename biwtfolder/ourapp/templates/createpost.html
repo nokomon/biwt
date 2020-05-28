@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST" action="{% url 'newpost' %}">
+    {% csrf_token %}
+    <p>Title</p>
+    <input type="text" name='title'>
+    <br>
+    <br>
+    <p>Author</p>
+    <input type="text" name="author" value="{{user.username}}" readonly="readonly">
+
+    <p>Body</p>
+    <textarea id="summernote" name="body" cols=100 rows=100></textarea>
+    <br>
+    <br>
+    <input type="submit" value="POST!">
+</form>
+
+{% endblock %}

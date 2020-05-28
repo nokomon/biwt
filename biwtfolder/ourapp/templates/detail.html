@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Test for detail page</h1>
+
+<h1>제목: {{post.title}}</p>
+<h3>작성자: {{post.author}}</h3>
+<h4>작성날짜: {{post.pub_date}}</h4>
+<p>{{post.body | safe}}</p>
+
+{% endblock %}

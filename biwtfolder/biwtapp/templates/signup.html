@@ -1,0 +1,20 @@
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <h2>회원가입 페이지입니다</h2>
+    {% if error %}
+    <h3>오류사항: {{ error }}</h3>
+    {% endif %}
+
+    <p>Username</p>
+    <input name="username" type="text">
+    <br>
+    <p>Password</p>
+    <input type="password" name="password1">
+    <br>
+    <p>Confirm your Password</p>
+    <input type="password", name="password2">
+    <br>
+    <br>
+    <input type="submit" value="signup">
+
+</form>
