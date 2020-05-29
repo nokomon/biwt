@@ -14,4 +14,5 @@ urlpatterns = [
     path('login/', biwtapp.views.login, name='login'),
     path('gaiphagi/', biwtapp.views.signup, name='signup'),
     path('logout/', biwtapp.views.logout, name='logout'),
+    path('discovery/', biwtapp.views.discovery, name='discovery'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
